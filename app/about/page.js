@@ -41,7 +41,7 @@ export default async function Page() {
       </div>
 
       <div className="col-span-2 relative aspect-square">
-        <img
+        <Image
           src={about1}
           fill
           placeholder="blur"
@@ -51,7 +51,7 @@ export default async function Page() {
       </div>
 
       <div className="col-span-2 relative aspect-square">
-        <img
+        <Image
           src={about2}
           fill
           placeholder="blur"
