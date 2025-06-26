@@ -15,6 +15,7 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
       defaultValue={`${defaultCountry}%${flag}`}
       className={`${className} cursor-pointer`}
       key={defaultCountry}
+      required
     >
       <option value=''>Select country...</option>
       {countries.map((c) => (

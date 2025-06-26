@@ -3,10 +3,18 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { format } from "date-fns";
 import { useReservation } from "./ReservationContext";
+import { useState } from "react";
 
 function ReservationReminder() {
   // CHANGE
   const { range } = useReservation();
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
 
   if (!range.from || !range.to) return null;
 
@@ -18,7 +26,7 @@ function ReservationReminder() {
         {format(new Date(range.to), "MMM dd yyyy")}
       </p>
       <button className="rounded-full p-1 hover:bg-accent-600 transition-all">
-        <XMarkIcon className="h-5 w-5" />
+        <XMarkIcon onClick={handleClose} className="h-5 w-5 cursor-pointer" />
       </button>
     </div>
   );
